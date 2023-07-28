@@ -1,0 +1,25 @@
+{
+    "Credentials": {
+        "tenant_id": "",
+        "client_id": "",
+        "client_secret": "",
+        "scope": "",
+        "authority": "https://login.microsoftonline.com/",
+        "tokenEndPoint": "https://graph.microsoft.com",
+        "selectArgs": ["", ""],
+        "emailAddress": "",
+        "identifier": "@"
+    },   
+
+    "queryParameters":{
+        "filter": ""
+    },
+
+    "proxySettings": {
+        "proxyUrl": "",
+        "proxyPort": "",
+        "proxyUsername": "",
+        "proxyPassword": "",
+        "proxyType": "0"
+    }
+}

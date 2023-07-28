@@ -1,0 +1,57 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>57</x><y>727</y><w>480</w><h>170</h></coordinates><panel_attributes>Credentials
+--
+- tenant_id:str
+- client_id:str 
+- client_secret:str
+- scope = []
+- authority = "https://login.microsoftonline.com/"
+- tokenEndPoint = "https://graph.microsoft.com/v1.0"
+- selectArgs:str
+- identifier:str
+--
++ setCredentials(tenant_id, client_id, client_secret, scope, tokenEndPoint, selectArgs)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>557</x><y>727</y><w>510</w><h>170</h></coordinates><panel_attributes>ProxySettings
+--
+- proxyAdress: str
+- proxyPort: int
+- proxyUsername: str
+- proxyPassword: str
+- proxyType: int
+--
++ setProxySettings(proxyAdress, proxyPort, proxyUsername, proxyPassword, proxyType)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>347</x><y>497</y><w>400</w><h>120</h></coordinates><panel_attributes>Settings
+--
+-  credentials:Credentials
+-  proxySettings:ProxySettings
+- queryParam: str
+--
++ setSettings(credentials:Credentials, proxySettings:ProxySettings)
+- __read_json(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>607</y><w>270</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>250;10;250;80;10;80;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>537</x><y>607</y><w>300</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;280;80;280;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>357</x><y>27</y><w>380</w><h>210</h></coordinates><panel_attributes>GraphFunc
+--
+client: GraphServiceClient
+outFunc: Output
+--
+__init__(filepath)
+getMailboxInfo()
+getMessage()
+getCalendarView()
+getEvents()
+updateMailtoRead(msgId:str):Message
+routineDefault(filepath: str)
+routineUpdateToRead(msgIdStr:str):void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>777</x><y>57</y><w>420</w><h>120</h></coordinates><panel_attributes>Output
+--
+
+--
++ cleanSubjectLine(subject:string):string
++ processingMail(msgs: MessageCollectionResponse):void
++ processingCalendarView(calendarView: EventCollectionResponse):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>347</x><y>287</y><w>400</w><h>150</h></coordinates><panel_attributes>msGraph
+--
+__settings: Settings
+--
+__init__()
+__getAuthUrl(settings: Settings)
+__getClientSecretCredential(settings: Settings): Credentials
+_getToken(settings: Settings): GraphServiceClient
+__getTokenProxy(settings: Settings): GraphServiceClient
+__getTokenProxyCredentials(settings: Settings): GraphServiceClient</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>537</x><y>427</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>727</x><y>117</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>537</x><y>227</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element></diagram>

@@ -1,0 +1,13 @@
+# created by virtualenv automatically
+.venv/*
+Auth.py
+authGraph.py
+resources/*_one.json
+resources/*_com.json
+resources/Mailbox/*
+Output.txt
+resources/Mail/*
+Classes/__pycache__/*
+Classes/FunctionClasses/__pycache__/*
+Classes/DataStruktureClasses/__pycache__/*
+.vscode
